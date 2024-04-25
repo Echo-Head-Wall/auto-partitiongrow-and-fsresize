@@ -1,0 +1,7 @@
+[Unit]
+Description=Resize partition and filesystem
+Requires=dev-sda2.device 
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/growpart /dev/sda2 1 && /bin/resize2fs /dev/sda2
